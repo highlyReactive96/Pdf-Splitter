@@ -1,0 +1,16 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PDFSplitterService {
+    private final PDFFileRepository pdfFileRepository;
+
+    @Autowired
+    public PDFSplitterService(PDFFileRepository pdfFileRepository) {
+        this.pdfFileRepository = pdfFileRepository;
+    }
+
+    // Service methods for PDF splitting operations
+}

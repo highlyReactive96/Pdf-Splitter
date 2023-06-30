@@ -1,0 +1,47 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.demo.pojos.SplitRequest;
+import com.example.demo.pojos.SplitResult;
+import com.example.demo.service.PDFSplitterServiceImpl;
+
+import java.io.IOException;
+
+@RestController
+@RequestMapping("/api/pdf")
+public class PDFSplitterController {
+    private final PDFSplitterServiceImpl pdfSplitterService;
+
+    @Autowired
+    public PDFSplitterController(PDFSplitterServiceImpl pdfSplitterService) {
+        this.pdfSplitterService = pdfSplitterService;
+    }
+
+    @PostMapping("/upload")
+    public ResponseEntity<?> uploadPDF(@RequestParam("file") MultipartFile file) {
+        try {
+            pdfSplitterService.uploadPDF(file);
+            return ResponseEntity.ok("PDF file uploaded successfully");
+        } catch (IOException e) {
+            return ResponseEntity.badRequest().body("Failed to upload PDF file");
+        }
+    }
+
+    @PostMapping("/split")
+    public ResponseEntity<?> splitPDF(@RequestBody SplitRequest splitRequest) {
+        try {
+            SplitResult splitResult = pdfSplitterService.splitPDF(splitRequest);
+            return ResponseEntity.ok(splitResult);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        } catch (IOException e) {
+            return ResponseEntity.status(500).body("Failed to split PDF");
+        }
+    }
+
+    // Other controller methods for additional functionalities
+}

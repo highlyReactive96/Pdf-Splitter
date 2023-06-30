@@ -1,0 +1,28 @@
+package com.example.demo.pojos;
+
+import javax.persistence.*;
+
+import lombok.Data;
+
+import java.util.List;
+
+@Entity
+@Table(name = "split_results")
+@Data
+public class SplitResult {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+   
+
+    private String fileName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "splitResult")
+    private List<SplitPDFFile> splitPDFFiles;
+
+    // Constructors, getters, and setters
+//    public PDFFile getPdfFileId() {
+//        return pdfFileId;
+//    }
+}

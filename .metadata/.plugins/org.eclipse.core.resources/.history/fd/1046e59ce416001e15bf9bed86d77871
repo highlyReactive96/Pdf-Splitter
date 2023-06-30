@@ -1,0 +1,24 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.pojos.SplitResult;
+import com.example.demo.repositories.PDFFileRepository;
+
+@Service
+public class PDFSplitterService {
+    private final PDFFileRepository pdfFileRepository;
+
+    @Autowired
+    public PDFSplitterService(PDFFileRepository pdfFileRepository) {
+        this.pdfFileRepository = pdfFileRepository;
+    }
+
+
+       public void uploadPDF(MultipartFile file) throws IOException;
+
+       public   SplitResult splitPDF(SplitRequest splitRequest) throws IOException;
+    }
+
+

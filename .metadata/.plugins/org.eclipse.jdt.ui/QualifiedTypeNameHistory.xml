@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="lombok.NoArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.AllArgsConstructor"/>
+    <fullyQualifiedTypeName name="lombok.Getter"/>
+    <fullyQualifiedTypeName name="lombok.Setter"/>
+    <fullyQualifiedTypeName name="lombok.Data"/>
+    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartFile"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="com.example.demo.repositories.PDFFileRepository"/>
+    <fullyQualifiedTypeName name="com.example.demo.pojos.PDFFile"/>
+    <fullyQualifiedTypeName name="com.example.demo.pojos.PageRange"/>
+    <fullyQualifiedTypeName name="com.example.demo.pojos.SplitPDFFile"/>
+    <fullyQualifiedTypeName name="com.example.demo.service.PDFSplitterServiceImpl"/>
+    <fullyQualifiedTypeName name="com.example.demo.pojos.SplitRequest"/>
+    <fullyQualifiedTypeName name="com.example.demo.pojos.SplitResult"/>
+</qualifiedTypeNameHistroy>
